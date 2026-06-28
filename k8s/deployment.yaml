@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: got-app
+  name: got-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: got-app
+  template:
+    metadata:
+      labels:
+        app: got-app
+    spec:
+      containers:
+      - image: isaadock/got-app:latest
+        name: got-app
+        ports:
+        - containerPort: 5000
+
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
