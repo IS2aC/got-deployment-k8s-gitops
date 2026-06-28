@@ -11,7 +11,7 @@ characters = [
         "status": "Vivant",
         "quote": "Je ne sais rien.",
         "color": "#1a3a5c",
-        "image": "https://upload.wikimedia.org/wikipedia/en/3/38/Jon_Snow-Kit_Harington.jpg"
+        "image": "https://thronesapi.com/assets/images/jon-snow.jpg"
     },
     {
         "name": "Daenerys Targaryen",
@@ -21,7 +21,7 @@ characters = [
         "status": "Décédée",
         "quote": "Dracarys.",
         "color": "#5c1a1a",
-        "image": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0d/Daenerys_Targaryen_S8.png/220px-Daenerys_Targaryen_S8.png"
+        "image": "https://thronesapi.com/assets/images/daenerys.jpg"
     },
     {
         "name": "Tyrion Lannister",
@@ -41,7 +41,7 @@ characters = [
         "status": "Décédée",
         "quote": "Quand tu joues au jeu des trônes, tu gagnes ou tu meurs.",
         "color": "#3a1a5c",
-        "image": "https://upload.wikimedia.org/wikipedia/en/2/20/Cersei_Lannister_S8.png"
+        "image": "https://thronesapi.com/assets/images/cersei.jpg"
     },
     {
         "name": "Arya Stark",
@@ -51,7 +51,7 @@ characters = [
         "status": "Vivante",
         "quote": "Une fille n'a pas de nom.",
         "color": "#1a5c2a",
-        "image": "https://upload.wikimedia.org/wikipedia/en/3/32/Arya_Stark-Maisie_Williams.jpg"
+        "image": "https://thronesapi.com/assets/images/arya-stark.jpg"
     },
     {
         "name": "Ned Stark",
@@ -61,7 +61,7 @@ characters = [
         "status": "Décédé",
         "quote": "L'hiver vient.",
         "color": "#2a2a4a",
-        "image": "https://upload.wikimedia.org/wikipedia/en/2/24/Ned_Stark-Sean_Bean.jpg"
+        "image": "https://thronesapi.com/assets/images/ned-stark.jpg"
     },
 ]
 
