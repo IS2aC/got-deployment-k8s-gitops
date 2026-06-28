@@ -15,7 +15,7 @@ spec:
         app: got-app
     spec:
       containers:
-      - image: isaadock/got-app:latest
+      - image: isaadock/got-app:v2
         name: got-app
         ports:
         - containerPort: 5000
