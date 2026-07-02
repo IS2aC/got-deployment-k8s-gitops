@@ -22,16 +22,6 @@ characters = [
         "quote": "Dracarys.",
         "color": "#5c1a1a",
         "image": "https://thronesapi.com/assets/images/daenerys.jpg"
-    },
-    {
-        "name": "Cersei Lannister",
-        "house": "Lannister",
-        "actor": "Lena Headey",
-        "title": "Reine des Sept Couronnes",
-        "status": "Décédée",
-        "quote": "Quand tu joues au jeu des trônes, tu gagnes ou tu meurs.",
-        "color": "#3a1a5c",
-        "image": "https://thronesapi.com/assets/images/cersei.jpg"
     }
 ]
 
