@@ -32,27 +32,7 @@ characters = [
         "quote": "Quand tu joues au jeu des trônes, tu gagnes ou tu meurs.",
         "color": "#3a1a5c",
         "image": "https://thronesapi.com/assets/images/cersei.jpg"
-    },
-    {
-        "name": "Arya Stark",
-        "house": "Stark",
-        "actor": "Maisie Williams",
-        "title": "La Fille Sans Visage",
-        "status": "Vivante",
-        "quote": "Une fille n'a pas de nom.",
-        "color": "#1a5c2a",
-        "image": "https://thronesapi.com/assets/images/arya-stark.jpg"
-    },
-    {
-        "name": "Ned Stark",
-        "house": "Stark",
-        "actor": "Sean Bean",
-        "title": "Seigneur de Winterfell",
-        "status": "Décédé",
-        "quote": "L'hiver vient.",
-        "color": "#2a2a4a",
-        "image": "https://thronesapi.com/assets/images/ned-stark.jpg"
-    },
+    }
 ]
 
 @app.route("/")
