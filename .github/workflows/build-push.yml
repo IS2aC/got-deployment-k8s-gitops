@@ -44,6 +44,35 @@ jobs:
             ${{ env.REGISTRY }}/${{ steps.image.outputs.name }}:${{ steps.vars.outputs.sha_short }}
             ${{ env.REGISTRY }}/${{ steps.image.outputs.name }}:latest
 
+      - name: Scan image with Trivy
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: ${{ env.REGISTRY }}/${{ steps.image.outputs.name }}:${{ steps.vars.outputs.sha_short }}
+          format: 'json'
+          output: 'trivy-report.json'
+          severity: 'CRITICAL,HIGH,MEDIUM,LOW'
+          exit-code: '0'
+
+      - name: Summarize Trivy results
+        id: summary
+        run: |
+          CRITICAL=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity=="CRITICAL")] | length' trivy-report.json)
+          HIGH=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity=="HIGH")] | length' trivy-report.json)
+          MEDIUM=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity=="MEDIUM")] | length' trivy-report.json)
+          LOW=$(jq '[.Results[]?.Vulnerabilities[]? | select(.Severity=="LOW")] | length' trivy-report.json)
+          echo "critical=$CRITICAL" >> "$GITHUB_OUTPUT"
+          echo "high=$HIGH" >> "$GITHUB_OUTPUT"
+          echo "medium=$MEDIUM" >> "$GITHUB_OUTPUT"
+          echo "low=$LOW" >> "$GITHUB_OUTPUT"
+
+      - name: Notify Slack - image quality
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+            --data '{
+              "text": "🔍 *Scan Trivy* — `${{ steps.image.outputs.name }}:${{ steps.vars.outputs.sha_short }}`\n🔴 Critical: ${{ steps.summary.outputs.critical }}   🟠 High: ${{ steps.summary.outputs.high }}   🟡 Medium: ${{ steps.summary.outputs.medium }}   ⚪ Low: ${{ steps.summary.outputs.low }}\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|Voir le run>"
+            }' \
+            "${{ secrets.SLACK_WEBHOOK_URL }}"
+
       - name: Update k8s manifest with new image tag
         run: |
           yq -i '.spec.template.spec.containers[0].image = "${{ env.REGISTRY }}/${{ steps.image.outputs.name }}:${{ steps.vars.outputs.sha_short }}"' k8s/deployment.yaml
