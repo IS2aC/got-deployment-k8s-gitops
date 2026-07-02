@@ -15,15 +15,14 @@ spec:
         app: got-app
     spec:
       containers:
-      - image: isaadock/got-app:v2
-        name: got-app
-        ports:
-        - containerPort: 5000
-
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "100m"
-          limits:
-            memory: "128Mi"
-            cpu: "200m"
+        - image: ghcr.io/is2ac/got-deployment-k8s-gitops:9f32ccc
+          name: got-app
+          ports:
+            - containerPort: 5000
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "100m"
+            limits:
+              memory: "128Mi"
+              cpu: "200m"
