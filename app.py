@@ -24,16 +24,6 @@ characters = [
         "image": "https://thronesapi.com/assets/images/daenerys.jpg"
     },
     {
-        "name": "Tyrion Lannister",
-        "house": "Lannister",
-        "actor": "Peter Dinklage",
-        "title": "Main du Roi",
-        "status": "Vivant",
-        "quote": "Je bois et je sais des choses.",
-        "color": "#5c4a1a",
-        "image": "https://upload.wikimedia.org/wikipedia/en/5/50/Tyrion_Lannister-Peter_Dinklage.jpg"
-    },
-    {
         "name": "Cersei Lannister",
         "house": "Lannister",
         "actor": "Lena Headey",
