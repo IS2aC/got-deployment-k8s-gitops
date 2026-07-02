@@ -15,7 +15,7 @@ spec:
         app: got-app
     spec:
       containers:
-        - image: ghcr.io/is2ac/got-deployment-k8s-gitops:9f32ccc
+        - image: ghcr.io/is2ac/got-deployment-k8s-gitops:461dd9c
           name: got-app
           ports:
             - containerPort: 5000
